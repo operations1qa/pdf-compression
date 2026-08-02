@@ -1,5 +1,6 @@
 "use client";
 
+import AdSlot from "@/components/AdSlot";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import PdfUploadZone from "@/components/PdfUploadZone";
 import { usePdfCompression } from "@/hooks/usePdfCompression";
@@ -39,7 +40,11 @@ export default function PdfCompressTool() {
           disabled={!file || isLoading}
           className="inline-flex min-h-12 items-center justify-center rounded-xl bg-teal-700 px-6 text-sm font-semibold text-white shadow-lg shadow-teal-900/15 transition hover:bg-teal-800 disabled:cursor-not-allowed disabled:bg-slate-300 disabled:shadow-none"
         >
-          {isLoading ? <LoadingSpinner label="Compressing PDF…" /> : "Compress PDF"}
+          {isLoading ? (
+            <LoadingSpinner label="Compressing PDF…" />
+          ) : (
+            "Compress PDF"
+          )}
         </button>
         {file ? (
           <button
@@ -54,30 +59,40 @@ export default function PdfCompressTool() {
       </div>
 
       {error ? (
-        <div className="mt-4 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700" role="alert">
+        <div
+          className="mt-4 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700"
+          role="alert"
+        >
           {error}
         </div>
       ) : null}
 
       {fallback ? (
-        <div className="mt-4 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900" role="status">
+        <div
+          className="mt-4 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900"
+          role="status"
+        >
           {fallback}
         </div>
       ) : null}
 
       {success ? (
-        <div className="mt-4 rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-900" role="status">
+        <div
+          className="mt-4 rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-900"
+          role="status"
+        >
           {success}
           {originalSize != null && compressedSize != null ? (
             <span className="mt-1 block text-emerald-800/80">
-              Original {formatBytes(originalSize)} → Compressed {formatBytes(compressedSize)}
+              Original {formatBytes(originalSize)} → Compressed{" "}
+              {formatBytes(compressedSize)}
             </span>
           ) : null}
         </div>
       ) : null}
 
       {downloadUrl ? (
-        <div className="mt-6">
+        <div className="mt-6 space-y-4">
           <a
             href={downloadUrl}
             download={downloadName || "compressed.pdf"}
@@ -85,8 +100,19 @@ export default function PdfCompressTool() {
           >
             Download compressed PDF
           </a>
+          <AdSlot
+            slotId="1234567890"
+            className="min-h-[100px] rounded-xl bg-slate-100/80 p-2"
+          />
         </div>
       ) : null}
+
+      <div className="mt-8 lg:hidden">
+        <AdSlot
+          slotId="2345678901"
+          className="min-h-[100px] rounded-xl bg-slate-100/80 p-2"
+        />
+      </div>
     </div>
   );
 }
