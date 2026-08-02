@@ -1,6 +1,6 @@
 const BASE =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
-  "http://localhost:3000";
+  "https://pdf-compression-ten.vercel.app";
 
 export function GET() {
   const body = `User-agent: *
