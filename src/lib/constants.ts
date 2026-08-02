@@ -12,6 +12,10 @@ export const CONTACT_EMAIL =
   process.env.NEXT_PUBLIC_CONTACT_EMAIL?.trim() ||
   "georgetsiogas902@gmail.com";
 
+export const ADSENSE_CLIENT =
+  process.env.NEXT_PUBLIC_ADSENSE_CLIENT?.trim() ||
+  "ca-pub-6276592108686924";
+
 export const PDF_MAX_FILE_BYTES = 50 * 1024 * 1024;
 
 export const SEO_LANDING_LINKS = [

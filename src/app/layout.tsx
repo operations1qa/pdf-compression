@@ -3,6 +3,7 @@ import { Figtree, Syne } from "next/font/google";
 import JsonLd from "@/components/JsonLd";
 import SiteFooter from "@/components/SiteFooter";
 import {
+  ADSENSE_CLIENT,
   SITE_DESCRIPTION,
   SITE_NAME,
   SITE_TITLE,
@@ -54,6 +55,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script
+          async
+          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`}
+          crossOrigin="anonymous"
+        />
+      </head>
       <body className={`${figtree.variable} ${syne.variable} font-sans antialiased`}>
         <JsonLd />
         <div className="flex min-h-screen flex-col">
