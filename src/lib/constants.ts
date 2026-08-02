@@ -4,9 +4,8 @@ export const SITE_TITLE =
 export const SITE_DESCRIPTION =
   "Free PDF compression tool to compress PDF online and reduce PDF file size. Upload a PDF, compress it, and download a smaller file — no signup.";
 
-export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
-  "https://pdf-compression-ten.vercel.app";
+/** Always use the public production domain — never a Vercel preview URL (SSO-protected). */
+export const SITE_URL = "https://pdf-compression-ten.vercel.app";
 
 export const CONTACT_EMAIL =
   process.env.NEXT_PUBLIC_CONTACT_EMAIL?.trim() ||
