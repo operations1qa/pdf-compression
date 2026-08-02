@@ -9,7 +9,8 @@ export const SITE_URL =
   "https://pdf-compression-ten.vercel.app";
 
 export const CONTACT_EMAIL =
-  process.env.NEXT_PUBLIC_CONTACT_EMAIL?.trim() || "";
+  process.env.NEXT_PUBLIC_CONTACT_EMAIL?.trim() ||
+  "georgetsiogas902@gmail.com";
 
 export const PDF_MAX_FILE_BYTES = 50 * 1024 * 1024;
 
