@@ -9,11 +9,18 @@ export const metadata: Metadata = {
   openGraph: {
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
-    url: SITE_URL,
+    url: `${SITE_URL}${TOOL_PATH}`,
     type: "website",
   },
+  keywords: [
+    "compress pdf",
+    "pdf compressor",
+    "compress pdf online",
+    "free pdf compressor",
+    "reduce pdf file size",
+  ],
 };
 
-export default function HomePage() {
+export default function CompressPdfPage() {
   return <CompressPdfView />;
 }
